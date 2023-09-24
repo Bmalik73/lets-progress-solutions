@@ -1,42 +1,123 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: #ffffff;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.AppBar {
+  background-color: #35363a; 
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.toolbar {
+  display: flex;
+  justify-content: space-between;
 }
 
-.card {
-  padding: 2em;
+.profile-icon {
+  display: flex; 
+  background-color: #512da8;
+  color: #f0f0f0;
+  width: 1rem; 
+  height: 1rem; 
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
 }
 
-.read-the-docs {
-  color: #888;
+.right-nav {
+  position: absolute;
+  top: 0.9rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem; 
+}
+
+.right-nav Button {
+  text-transform: none;
+  font-size: 0.7rem;
+}
+
+.google-logo {
+  width: 12.5rem; 
+  margin-top: 7.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.custom-textfield {
+  width: 40rem;
+}
+
+.custom-textfield .MuiOutlinedInput-root {
+  background-color: white; 
+  border-radius: 50px;
+  height: 2.5rem; 
+  padding: 0 0.9rem;
+}
+
+.custom-input {
+  color: black;
+}
+
+.custom-textfield .MuiOutlinedInput-notchedOutline {
+  border-radius: 50px;
+}
+
+.micro-icon {
+  width: 1.8rem; 
+  height: 1.25rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+.lens-icon {
+  width: 0.9rem; 
+  height: 1.5rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+.favorite-grid {
+  width: 35rem;  
+  margin: 1rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 1rem; 
+}
+
+.customize-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #202124;
+  color: #466581;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.customize-btn:hover {
+  background-color: #0d0b0b;
+}
+
+.customize-btn img {
+  width: 30px; 
+  height: auto; 
+  margin-right: 8px;
 }

@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { TextField, AppBar, Toolbar, InputAdornment, Button } from '@mui/material';
+import { Search, Apps as AppsIcon } from '@mui/icons-material';
+import './App.css';
+import FavoriteLink from './component/FavoriteLink/FavoriteLink';
+import mockFavoriteLinks from './data/mockFavoriteLinks';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App">
+      <AppBar position="static" color="transparent" elevation={0}>
+        <Toolbar className="toolbar">
+          <div className="right-nav">
+            <Button color="inherit">Gmail</Button>
+            <Button color="inherit">Images</Button>
+            <AppsIcon />
+            <div className="profile-icon">
+              J
+            </div>
+          </div>
+        </Toolbar>
+      </AppBar>
+      <div className="content">
+        <img src="/src/assets/Google_logo_white.svg" alt="Google Logo" className="google-logo" />
+        <TextField
+          className="custom-textfield"
+          variant="outlined"
+          placeholder="Search Google or type a URL"
+          InputProps={{
+            className: "custom-input",
+            startAdornment: (
+              <InputAdornment position="start">
+                <Search />
+              </InputAdornment>
+            ),
+            endAdornment: (
+              <InputAdornment position="end">
+                <img src="/src/assets/Google_Mic_Icon.svg" alt="Micro" className="icon micro-icon" />
+                <img src="/src/assets/icon_google-lens.svg" alt="Camera" className="icon lens-icon" />
+              </InputAdornment>
+            ),
+          }}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="favorite-grid">
+        {mockFavoriteLinks.map(link => (
+          <FavoriteLink 
+            key={link.id} 
+            imgName={link.imgName} 
+            label={link.label} 
+            url={link.url} 
+          />
+        ))}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <button className="customize-btn">
+        <img src="/src/assets/pen-icon.png" alt="Customize" /> Customize Chrome
+      </button>
+    </div>
+  );
 }
 
-export default App
+export default App;
